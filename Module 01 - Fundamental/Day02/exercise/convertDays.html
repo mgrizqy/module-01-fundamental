@@ -1,0 +1,112 @@
+
+
+<script>
+
+// input hari
+
+const daysInput = prompt("Enter days");
+alert(daysInput);
+
+// deklarasi variable untuk variasi jumlah hari dalam setiap bulan
+
+const jan = 31;
+const feb = 28;
+const mar = 31;
+const apr = 30;
+const may = 31;
+const jun = 30;
+const jul = 31;
+const aug = 31;
+const sep = 30;
+const oct = 31;
+const nov = 30;
+const des = 31;
+
+// Jumlah tahun dari input hari
+
+const years = Math.floor(daysInput / 365);
+
+
+let temp = daysInput - (years * 365); // temp untuk menyimpan sisa hari
+let monthsTemp = 0; // untk menyimpan sisa bulan
+let daysTemp = 0; // untuk menyimpan total hari berdasarkan variasi total hari setiap bulan
+
+
+// cek dan pengurangan sisa hari berdasarkan variasi total hari setiap bulan
+
+if (temp >= jan) {
+    temp = temp - jan;
+    monthsTemp = monthsTemp + 1;
+    daysTemp = daysTemp + jan;
+    if (temp >= feb) {
+        temp = temp - feb;
+        monthsTemp = monthsTemp + 1;
+        daysTemp = daysTemp + feb;
+        if (temp >= mar) {
+            temp = temp - mar;
+            monthsTemp = monthsTemp + 1;
+            daysTemp = daysTemp + mar;
+            if (temp >= apr) {
+                temp = temp - apr;
+                monthsTemp = monthsTemp + 1;
+                daysTemp = daysTemp + apr;
+                if (temp >= may) {
+                    temp = temp - may;
+                    monthsTemp = monthsTemp + 1;
+                    daysTemp = daysTemp + may;
+                    if (temp >= jun) {
+                        temp = temp - jun;
+                        monthsTemp = monthsTemp + 1;
+                        daysTemp = daysTemp + jun;
+                        if (temp >= jul) {
+                            temp = temp - jul;
+                            monthsTemp = monthsTemp + 1;
+                            daysTemp = daysTemp + jul;
+                            if (temp >= aug) {
+                                temp = temp - aug;
+                                monthsTemp = monthsTemp + 1;
+                                daysTemp = daysTemp + aug;
+                                if (temp >= sep) {
+                                    temp = temp - sep;
+                                    monthsTemp = monthsTemp + 1;
+                                    daysTemp = daysTemp + sep;
+                                    if (temp >= oct) {
+                                        temp = temp - oct;
+                                        monthsTemp = monthsTemp + 1;
+                                        daysTemp = daysTemp + oct;                                    
+                                        if (temp >= nov) {
+                                            temp = temp - nov;
+                                            monthsTemp = monthsTemp + 1;
+                                            daysTemp = daysTemp + nov;
+                                            if (temp >= des) {
+                                                temp = temp - des;
+                                                monthsTemp = monthsTemp + 1;
+                                                daysTemp = daysTemp + des;
+                                            }
+                                        }
+                                    }   
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+const months = monthsTemp;
+
+// 
+
+const days =(daysInput - daysTemp - (years * 365)) + 0 ;
+
+alert(`${years} year(s) ${months} month(s) ${days} day(s)`);
+
+
+</script>
+
+
+
+

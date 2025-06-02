@@ -1,0 +1,114 @@
+
+
+<script>
+
+
+const daysInput = prompt("Enter days");
+alert(daysInput);
+
+const jan = 31;
+const feb = 28;
+const mar = 31;
+const apr = 30;
+const may = 31;
+const jun = 30;
+const jul = 31;
+const aug = 31;
+const sep = 30;
+const oct = 31;
+const nov = 30;
+const des = 31;
+
+
+const years = Math.floor(daysInput / 365);
+
+
+let temp = daysInput - (years * 365);
+let monthsTemp = 0;
+let daysTemp = 0;
+
+
+// Learned how to change operator in a conditional statement using variable
+
+const operators = {
+
+    ">=" : (a,b) => a >= b
+
+}
+
+const operatorMonth = ">=";
+
+
+if (operators[operatorMonth] (temp,jan)) {
+    temp = temp - jan;
+    monthsTemp = monthsTemp + 1;
+    daysTemp = daysTemp + jan;
+    if (operators[operatorMonth] (temp,feb)) {
+        temp = temp - feb;
+        monthsTemp = monthsTemp + 1;
+        daysTemp = daysTemp + feb;
+        if (operators[operatorMonth] (temp,mar)) {
+            temp = temp - mar;
+            monthsTemp = monthsTemp + 1;
+            daysTemp = daysTemp + mar;
+            if (operators[operatorMonth] (temp,apr)) {
+                temp = temp - apr;
+                monthsTemp = monthsTemp + 1;
+                daysTemp = daysTemp + apr;
+                if (operators[operatorMonth] (temp,may)) {
+                    temp = temp - may;
+                    monthsTemp = monthsTemp + 1;
+                    daysTemp = daysTemp + may;
+                    if (operators[operatorMonth] (temp,jun)) {
+                        temp = temp - jun;
+                        monthsTemp = monthsTemp + 1;
+                        daysTemp = daysTemp + jun;
+                        if (operators[operatorMonth] (temp,jul)) {
+                            temp = temp - jul;
+                            monthsTemp = monthsTemp + 1;
+                            daysTemp = daysTemp + jul;
+                            if (operators[operatorMonth] (temp,aug)) {
+                                temp = temp - aug;
+                                monthsTemp = monthsTemp + 1;
+                                daysTemp = daysTemp + aug;
+                                if (operators[operatorMonth] (temp,sep)) {
+                                    temp = temp - sep;
+                                    monthsTemp = monthsTemp + 1;
+                                    daysTemp = daysTemp + sep;
+                                    if (operators[operatorMonth] (temp,oct)) {
+                                        temp = temp - oct;
+                                        monthsTemp = monthsTemp + 1;
+                                        daysTemp = daysTemp + oct;                                    
+                                        if (operators[operatorMonth] (temp,nov)) {
+                                            temp = temp - nov;
+                                            monthsTemp = monthsTemp + 1;
+                                            daysTemp = daysTemp + nov;
+                                            if (operators[operatorMonth] (temp,des)) {
+                                                temp = temp - des;
+                                                monthsTemp = monthsTemp + 1;
+                                                daysTemp = daysTemp + des;
+                                            }
+                                        }
+                                    }   
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+const months = monthsTemp;
+const days =(daysInput - daysTemp - (years * 365)) + 0 ;
+
+alert(`${years} year(s) ${months} month(s) ${days} day(s)`);
+
+
+</script>
+
+
+
+

@@ -1,0 +1,231 @@
+<script>
+
+// Input tangal pertama dan cek data dan tipenya
+
+let date1 = prompt("Input first date. eg : 2000-05-25"); // YYYY-MM-DD
+
+
+const date1Length = date1.length;
+
+const year1_FirstDigit = date1.charAt(0);
+const year1_SecondDigit = date1.charAt(1);
+const year1_ThirdDigit = date1.charAt(2);
+const year1_FourthDigit = date1.charAt(3);
+const dashYear1 = date1.charAt(4);
+const year1TypeCheck = 
+(!(isNaN(parseInt(year1_FirstDigit))) &&
+ !(isNaN(parseInt(year1_SecondDigit))) &&
+ !(isNaN(parseInt(year1_ThirdDigit))) &&
+ !(isNaN(parseInt(year1_FourthDigit))));
+
+const year1 = parseInt(`${year1_FirstDigit}${year1_SecondDigit}${year1_ThirdDigit}${year1_FourthDigit}`); // Tahun input pertama
+
+
+if ((year1.toString()).length == 4 && dashYear1 == "-" && year1TypeCheck) {
+    //alert(`Year of date 1 : ${year1}`);
+} else {
+    alert("Error : invalid date 1 (year)");
+    throw new Error("Error : invalid date 1 (year)");
+}
+
+
+
+
+
+const dashMonth1 = date1.charAt(4);
+const month1_FirstDigit = date1.charAt(5);
+const month1_SecondDigit = date1.charAt(6);
+const secondDashMonth1 = date1.charAt(7);
+const month1TypeCheck = (!(isNaN(parseInt(month1_FirstDigit))) && !(isNaN(parseInt(month1_SecondDigit))));
+
+
+const month1 = parseInt(`${month1_FirstDigit}${month1_SecondDigit}`);
+const isMonth1Less12AndDash = (month1 > 0 && month1 <= 12 && dashMonth1 == "-" && secondDashMonth1 == "-");
+
+
+if (month1 >= 10 && isMonth1Less12AndDash && month1TypeCheck) {
+    //alert(`Month(s) of date 1 : ${month1}`);
+    
+} else if (month1 < 10 && isMonth1Less12AndDash && month1TypeCheck) {
+    
+   // alert(`Month(s) of date 1 : 0${month1}`)
+    
+} else {
+    alert("Error : invalid date 1 (month)");
+    throw new Error("Error : invalid date 1 (month)");
+}
+
+
+
+
+const dashDay1 = date1.charAt(date1Length - 3);
+const day1FirstDigit = date1.charAt(date1Length - 2);
+const day1SecondDigit = date1.charAt(date1Length - 1);
+const day1TypeCheck = (!(isNaN(parseInt(day1FirstDigit))) && !(isNaN(parseInt(day1SecondDigit)))); // Cek type
+
+
+const days1 = parseInt(`${day1FirstDigit}${day1SecondDigit}`);
+const isDays1Under30AndDash = (days1 > 0 && days1 <= 30 && dashDay1 == "-"); 
+
+
+if (days1 >= 10 && isDays1Under30AndDash && day1TypeCheck) {
+    //alert(`Day(s) of date 1 : ${days1}`);
+    
+} else if (days1 < 10 && isDays1Under30AndDash && day1TypeCheck) {
+    
+    //alert(`Month(s) of date 1 : 0${days1}`)
+    
+} else {
+    alert("Error : invalid date 1 (day)");
+    throw new Error("Error : invalid date 1 (day)");
+}
+
+
+// Input tangal kedua dan cek data dan tipenya
+
+let date2 = prompt("Input second date. eg : 2000-05-25"); // YYYY-MM-DD
+
+
+const date2Length = date2.length; 
+
+
+const year2_FirstDigit = date2.charAt(0);
+const year2_SecondDigit = date2.charAt(1);
+const year2_ThirdDigit = date2.charAt(2);
+const year2_FourthDigit = date2.charAt(3);
+const dashYear2 = date2.charAt(4);
+const year2TypeCheck =
+(!(isNaN(parseInt(year2_FirstDigit))) &&
+ !(isNaN(parseInt(year2_SecondDigit))) &&
+ !(isNaN(parseInt(year2_ThirdDigit))) && 
+ !(isNaN(parseInt(year2_FourthDigit))));
+
+const year2 = parseInt(`${year2_FirstDigit}${year2_SecondDigit}${year2_ThirdDigit}${year2_FourthDigit}`); // Tahun input kedua
+
+
+if ((year2.toString()).length == 4 && dashYear2 == "-" && year2TypeCheck) {
+    //alert(`Year of date 2 : ${year2}`);
+} else {
+    alert("Error : invalid date 2 (year)");
+    throw new Error("Error : invalid date 2 (year)");
+}
+
+
+
+const dashMonth2 = date2.charAt(4);
+const month2_FirstDigit = date2.charAt(5);
+const month2_SecondDigit = date2.charAt(6);
+const secondDashMonth2 = date2.charAt(7);
+const month2TypeCheck = 
+(
+    !(isNaN(month2_FirstDigit)) && !(isNaN(month2_SecondDigit))
+);
+
+const month2 = parseInt(`${month2_FirstDigit}${month2_SecondDigit}`);
+const isMonth2Less12AndDash = (month2 > 0 && month2 <= 12 && dashMonth1 == "-" && secondDashMonth2 == "-");
+
+
+if (month2 >= 10 && isMonth2Less12AndDash && month2TypeCheck) {
+    //alert(`Month(s) of date 2 : ${month2}`);
+    
+} else if (month2 < 10 && isMonth2Less12AndDash && month2TypeCheck) {
+    
+    //alert(`Month(s) of date 2 : 0${month2}`)
+    
+} else {
+    alert("Error : invalid date 2 (month)");
+    throw new Error("Error : invalid date 2 (month)");
+}
+
+
+const dashDay2 = date2.charAt(date2Length - 3);
+const day2FirstDigit = date2.charAt(date2Length - 2);
+const day2SecondDigit = date2.charAt(date2Length - 1);
+const day2TypeCheck = 
+(
+    !(isNaN(parseInt(day2FirstDigit))) && !(isNaN(parseInt(day2SecondDigit)))
+);
+
+const days2 = parseInt(`${day2FirstDigit}${day2SecondDigit}`);
+const isDays2Under30AndDash = (days2 > 0 && days2 <= 30 && dashDay2 == "-"); 
+
+
+if (days2 >= 10 && isDays2Under30AndDash) {
+    //alert(`Day(s) of date 2 : ${days2}`);
+    
+} else if (days2 < 10 && isDays2Under30AndDash) {
+    
+    //alert(`Month(s) of date 2 : 0${days2}`)
+    
+} else {
+    alert("Error : invalid date 2 (day)");
+    throw new Error("Error : invalid date 2 (day)");
+}
+
+// Variable untuk menghitung durasi antara tanggal
+
+let dateGapCount = 0;
+let bufferMonths = 0;
+let yearTemp = 0;
+
+// Proses tahun
+
+if (year2 > year1) {
+
+    let minusOneYear = 0;
+
+    if ((year2 - year1) >= 1 ) {
+
+        bufferMonths = 12;
+        minusOneYear = 1;
+        dateGapCount = dateGapCount + 5;
+    }
+    
+    const yearGap = (year2 - year1 - minusOneYear) * 365;
+    yearTemp = year2 - year1 - minusOneYear;
+    dateGapCount = dateGapCount + yearGap;
+    
+} else {
+
+    let minusOneYear = 0;
+    
+    if ((year1 - year2) >= 1) {
+
+        bufferMonths = 12;
+        minusOneYear = 1;
+        dateGapCount = dateGapCount + 5;
+
+    }
+
+    const yearGap = (year1 - year2 - minusOneYear) * 365;
+    yearTemp = year1 - year2 - minusOneYear;
+    dateGapCount = dateGapCount + yearGap;
+
+}
+
+// Proses bulan
+
+let monthSubstract = month2 - month1;
+if (monthSubstract < 0) {
+    monthSubstract = monthSubstract * -1;
+}
+const monthCalc = (monthSubstract) + bufferMonths;
+const MonthGap = monthCalc * 30;
+dateGapCount = dateGapCount + MonthGap;
+
+// Proses hari
+
+let daySubstract = days2 - days1;
+if (daySubstract) {
+    daySubstract = daySubstract * -1;
+}
+dateGapCount = dateGapCount + (days2 - days1);
+
+
+//alert(`(${month2} - ${month1}) * [?/-] => ( Total : ${monthSubstract} ) + ${bufferMonths}`);
+//alert(`date1 : year ${year1} month ${month1}, date2 : year ${year2} month ${month2}, monthCalc = ${monthCalc} and ${yearTemp} year(s), days = ${dateGapCount}`);
+
+alert(`The gap between the dates (${date1} & ${date2}) is : ${dateGapCount} day(s)`);
+
+
+</script>

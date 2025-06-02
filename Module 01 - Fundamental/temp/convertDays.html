@@ -1,0 +1,17 @@
+
+
+<script>
+
+
+const daysInput = prompt("Enter days");
+alert(daysInput);
+
+const years = Math.floor(daysInput / 365);
+const months = Math.floor((daysInput / 30) % 12);
+const days = (daysInput - ((years * 365) + (months * 30))) ;
+alert(`${years} year(s) ${months} month(s) ${days} day(s)`);
+
+
+</script>
+
+

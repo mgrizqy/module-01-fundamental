@@ -1,0 +1,52 @@
+<script>
+    // prompt() : untuk menerima input dari user melalui pop-up browser
+    // const nama = prompt("Masukkan nama anda");
+
+   //  console.log(nama);
+
+    // alert() : menampikan data melalui pop-up browser
+    //alert(nama);
+
+
+    // const angkaA = prompt("Masukkan angka pertama");
+    // const angkaB = prompt("Masukkan angka kedua");
+
+    // const result = parseInt(angkaA) + parseInt(angkaB);
+
+    //OUTPUT
+    // alert(`${angkaA} + ${angkaB} = ${result}`);
+
+    // Exercise : Buat aplikasi yang bisa mendeteksi suatu data email atau bukan
+
+    /*
+    
+    Example 1
+    input : edo@mail.com
+    output : edo@mail.com adalah EMAIL
+    
+    Example 2
+    input : edo@mail.com
+    output : edo@mail.com bukan EMAIL
+
+    Example 3
+    input : edo@mail.com
+    output : edo@mail.com bukan EMAIL
+    */
+
+
+    const email = prompt("Masukkan email anda");
+    const mailFormat = "@";
+    const inputMailFormat = email.charAt(email.length - 9); // untuk seleksi @
+    const endChar = email.charAt(email.length - 1); // untuk seleksi huruf m diakhir
+
+
+    if (email.includes("@") && email.includes(".com")) {
+        alert(`${email} adalah EMAIL`);
+    //} else if (inputMailFormat == mailFormat && endChar == "m")  {    // else if ini tidak cocok karena jika antara @ dan m tidak sesuai dengan @mail.com, misal ..@mail.cim, masih menganggap itu benar
+    //    alert(`${email} adalah EMAIL`);
+    } else {
+        alert(`${email} bukan EMAIL`);
+    }
+
+
+</script>

@@ -1,0 +1,27 @@
+<script>
+
+
+// Input tanggal pertama 
+
+const date1 = new Date( prompt("Input first date. eg : 2000-05-25"));
+
+// Input tanggal kedua 
+
+const date2 = new Date(prompt("Input second date. eg : 2001-05-25"));
+
+//Konversi dari tanggal ke miliseconds
+
+const miliSecToDay = 1000 * 60 * 60 * 24;
+const date1_MiliSec = date1.getTime();
+const date2_MiliSec = date2.getTime();
+
+// Kalkulasi
+
+const dateDuration = math.round(Math.abs((date1_MiliSec - date2_MiliSec) / miliSecToDay));
+
+
+alert(`The gap between the dates (${date1.toLocaleDateString()} & ${date2.toLocaleDateString()}) is : ${dateDuration} day(s)`);
+
+
+</script>
+

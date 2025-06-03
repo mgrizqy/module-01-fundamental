@@ -30,9 +30,10 @@ o Example: 6 → 6 is not a prime number
 */
 
 
-const numberD :number = 7;
+const numberD :number = 15;
 let temp :number = 0;
 let factorCounter :number = 0;
+let result : string = "";
 
 if (numberD > 1) {
 
@@ -40,7 +41,7 @@ if (numberD > 1) {
 
         //console.log(i + 1);
 
-        if ((numberD % (i+1)) == 0) {
+        if (((numberD % (i+1)) == 0) && factorCounter < 3) {
 
             factorCounter += 1;
         }
@@ -53,16 +54,17 @@ if (numberD > 1) {
 
     if (factorCounter > 2) {
 
-        console.log(`${numberD} is not a prime number`);
+        result = `${numberD} is not a prime number`;
 
     } else {
 
-        console.log(`${numberD} is a prime number`);
+        result = `${numberD} is a prime number`;
 
     }
 
 }
 
+console.log(result);
 
 
 /* Soal 3 - total pertambahan dari angka 1 ke N

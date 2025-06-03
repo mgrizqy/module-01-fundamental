@@ -1,0 +1,92 @@
+
+<script>
+    
+const mainMenuTitle = "=== Menu Produk Minuman ===";
+let mainMenu = mainMenuTitle;
+const options = ["Lihat Produk","Tambah Produk","Perbarui Produk","Hapus Produk","Keluar"];
+
+const productTitle = "=== Daftar Produk ===";
+let productList = "";
+let products = ["Teh Manis","Lemon Tea","Choco Lava","Lychee Yakult","Oreo Milkshake"];
+
+let optionDisplay = "";
+
+for (let i = 0; i < options.length; i++) {
+
+    mainMenu += `\n${i+1}. ${options[i]}`;
+    
+}
+
+mainMenu += "\n\nMasukkan nomor menu";
+
+
+while (true) {
+
+
+    optionDisplay = mainMenu;
+    let chooseOption = prompt(optionDisplay);
+
+    
+    if (chooseOption == 1) {
+
+
+        productList = productTitle;
+        for (let i = 0; i < products.length; i++) {
+
+            productList += `\n${i+1}. ${products[i]}`;
+
+        }
+        alert(productList);   
+
+
+    } else if (chooseOption == 2) {
+
+
+        const addNewProduct = prompt("Masukkan nama produk baru:");
+        products.push(addNewProduct);
+        alert(`Produk ${addNewProduct} berhasil ditambahkan.`);
+
+
+    } else if (chooseOption == 3) {
+        
+
+        productList = productTitle;
+        for (let i = 0; i < products.length; i++) {
+
+            productList += `\n${i+1}. ${products[i]}`;
+
+        }        
+        alert(productList);
+        const replaceProduct = prompt("Masukkan nomor produk yang ingin diperbarui:");
+        const nameNewProduct = prompt("Masukkan nama produk baru:");
+        alert(`Produk "${products[replaceProduct-1]}"" telah diperbarui menjadi "${nameNewProduct}"`);
+        products.splice(replaceProduct-1,1,nameNewProduct);
+        
+
+    } else if (chooseOption == 4) {
+
+
+        productList = productTitle;
+        for (let i = 0; i < products.length; i++) {
+
+            productList += `\n${i+1}. ${products[i]}`;
+
+        }        
+        alert(productList);
+        const delProduct = prompt("Masukkan nomor produk yang ingin dihapus:");
+        alert(`Produk ${products[delProduct-1]} berhasil dihapus.`);
+        products.splice(delProduct-1,1);
+
+
+    } else if (chooseOption == 5) {
+
+        break;
+
+    }
+
+
+
+}
+
+
+</script>

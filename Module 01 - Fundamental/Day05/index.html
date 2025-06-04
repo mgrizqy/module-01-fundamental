@@ -1,0 +1,131 @@
+<script>
+
+const database = [
+    ["Kaos",35000,12], 
+    ["Celana",70000,12], 
+    ["Jaket",40000,3]];
+
+
+function lihatData() {
+
+    // 1. Menyiapkan penampung output tampilan data
+    let daftar = "=== Daftar Data ===\n"
+    for (let index = 0; index < database.length; index++) {
+        // 2. Mengakses data didalam array satu per satu
+        const value = database[index];
+        // 3. Menambahkan tiap data kedalam variable 
+        daftar += `${index + 1}. ${value[0]}, Harga : Rp${value[1].toLocaleString()}, Stock : ${value[2]} \n`;
+    }
+
+    // 4. Menampilkan data output
+    alert(daftar);
+
+}
+
+function tambahData() {
+
+    // 1. Menerima input data baru
+    const nama = prompt("Masukkan nama data baru:");
+
+    const harga = prompt("Masukkan harga data baru");
+
+    const stok = prompt("Masukkan jumlah stok data baru");
+
+    // 2. Menambahkan data kedalam database
+    database.push([nama,parseInt(harga).toLocaleString(),stok]);
+    alert(`Penambahan data "${nama}", dengan harga Rp${parseInt(harga).toLocaleString()} dan stok "${stok}" berhasil`);
+
+
+
+}
+
+
+
+function perbaruiData() {
+
+    lihatData();
+
+    // 1. Pilih nomor data
+    const noIndex = prompt("Masukkan nomor data yg diperbarui:");
+    // 2. Pilih sub-data yang dirubah
+
+
+    let print = 
+    `\n1. Produk
+2. Harga
+3. Stock`;
+
+    
+
+    const subData = prompt(`Pilih data yg diperbarui:${print}`);
+    let namaDataBaru;
+
+    if (subData == "1") {
+
+        const nama = prompt(`Masukkan nama yang baru`);
+        namaDataBaru = nama;
+        alert(`Nama data "${database[noIndex-1][subData-1]}" diperbarui dengan "${namaDataBaru}"`);
+        
+    } else if (subData == "2") {
+        
+        const harga = prompt(`Masukkan harga yang baru`);
+        namaDataBaru = harga;
+        alert(`Harga data "${database[noIndex-1][subData-1]}" diperbarui dengan "${namaDataBaru}"`);
+        
+    } else if (subData == "3") {
+        
+        const stok = prompt(`Masukkan stok yang baru`);
+        namaDataBaru = stok;
+        alert(`Stok data "${database[noIndex-1][subData-1]}" diperbarui dengan "${namaDataBaru}"`);
+
+    }
+    
+
+    // 3. Memperbarui data kedalam database
+    database[noIndex-1].splice(subData-1,1,namaDataBaru);
+
+
+}
+
+function hapusData() {
+
+    lihatData();
+
+    // 1. Menerima input data baru
+    const noIndex = prompt("Masukkan nomor data yg dihapus:");
+    // 2. Menghapus data dari database
+    alert(`Penghapusan data "${database[noIndex-1][0]}", dengan harga Rp${database[noIndex-1][1].toLocaleString()} dan stok ${database[noIndex-1][2]} berhasil`);
+    database.pop(noIndex - 1);
+
+
+
+}
+
+do {
+
+const menu = prompt(`=== Menu Management Data ===
+1. Lihat data
+2. Tambah data
+3. Perbarui data
+4. Hapus data
+5. Keluar
+
+Masukkan nomor menu yang dipilih :`);
+
+    if (menu === "1") {
+        lihatData()
+    } else if (menu === "2") {
+        tambahData();
+    } else if (menu === "3") {
+        perbaruiData();
+    } else if (menu === "4") {
+        hapusData();
+    } else if (menu === "5") {
+        break;
+    }
+
+} while (true);
+
+</script>
+
+

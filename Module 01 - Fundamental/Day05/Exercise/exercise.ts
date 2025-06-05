@@ -68,75 +68,54 @@ console.log(print1);
 
 
 
-// 2. Write a function that takes an array of words and returns a string by concatenating the words in the array,
-// separated by commas and - the last word - by an 'and'.
-// a. Example  arr = ["apple", "banana", "cherry", "date"] - "apple, banana, cherry, and date"
-
-
-const arr1 :string[] = ["apple","banana","cherry","date"];
-
-function buildStringWithAndAtTheEnd () {
-
-    let print :string = "";
-
-    for (let i = 0; i < arr1.length; i++) {
-        
-        if (i == arr1.length - 1) {
-
-            print += `and ${arr1[i]}`
-
-        } else {
-
-            print += `${arr1[i]}, `
-
-        }
-
-    }
-
-    return print;
-
-
-}
-
-console.log(buildStringWithAndAtTheEnd());
-
-
-
-
 // 3. Write a function from a given array of numbers and return the second smallest number
 // a. Example : numbers = [5, 3, 1, 7, 2, 6] -> 2
 
+
 const arr2 = [5, 3, 1, 7, 2, 6];
 
+
 function findSecondSmallestNumber () {
+
 
 let number :number = arr2[0];
 let number2 :number = arr[0];
 
+
     for (let i = 0; i < arr2.length; i++) {
+
 
         if (number > arr2[i]) {
 
+
             number = arr2[i];
+
 
         }
     }
 
+
     for (let u = 0; u < arr2.length; u++) {
+
 
         if (number != arr2[u] && number2 > arr2[u]) {
 
+
             number2 = arr2[u];
+
 
         } 
 
+
     }
+
 
 
     
     return number2;
     
 }
+
 
 console.log(findSecondSmallestNumber());
 
@@ -186,7 +165,6 @@ console.log(addTwoArray());
 
 
 
-
 // 5. Write a function that adds an element to the end of an array. 
 // However, the element should only be added if it is not already in the array.
 // a. Example : arr = [1,2,3,4], newElement = 4 -> [1,2,3,4]
@@ -224,4 +202,5 @@ function addElement_IfNotExist() {
 }
 
 console.log(addElement_IfNotExist());
+
 

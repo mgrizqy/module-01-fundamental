@@ -58,18 +58,38 @@ function combineArrayTogether () {
 console.log(combineArrayTogether());
 
 
+
+
+
 // 4. Write a function to find duplicate values in array
 // b. Example : arr = [1, 2, 2, 2, 3, 3, 4, 5, 5] -> [2, 3, 5]
 
 const arr8 :number[] = [1, 2, 2, 2, 3, 3, 4, 5, 5];
-let compareVar : number[] = [];
 
+function findDuplicate (arrayVar) {
+    
 
-for (let i = 0; i < arr8.length; i++) {
+    const duplicate = arrayVar.filter((element, index, array) => {
+    
+        // Can directly send result on return with condition check
+        return index != array.indexOf(element);
+    
+    } );
 
-
+    // [] and ...new Set() to make new array with only unique values
+    return [...new Set (duplicate)];
 
 }
+
+
+console.log(findDuplicate(arr8));
+
+
+
+
+
+
+
 
 
 
@@ -80,36 +100,36 @@ for (let i = 0; i < arr8.length; i++) {
 let arr10 : number [] = [1, 2, 3, 4, 5];
 let arr11 : number [] = [3, 4, 5, 6, 7];
 
-function findDifferenceTwoArray() {
+function findDifferenceTwoArray(array1 :any [], array2 :any []) {
 
 
-let temp :number [] = [];
-let temp1 :number [] = [];
 
-for (let i = 0 ; i < arr10.length; i++) {
+    const temp :any [] = [];
 
-    for (let a = 0; a < arr10.length; a++){
+    const result = temp.concat(array1,array2);
+    console.log(result);
+    
 
-        if (arr10[i] == arr11[a]) {
-            console.log(`${i}`);
-            
-            arr10.splice(i, 1);
+    const filteredResult = result.filter ((element,index,array) => {
+ 
+        // Look for the next index of the given element
+        return array.indexOf(element, array.indexOf(element) + 1) == -1;
 
-        } 
-        else {
+    });
 
-            temp.push(arr10[i]);
-
-        }
+    
 
 
-    }
-
-}
-
-return temp;
+return filteredResult;
 
 }
 
 
-console.log(findDifferenceTwoArray());
+console.log(findDifferenceTwoArray(arr10,arr11));
+
+
+
+
+
+
+

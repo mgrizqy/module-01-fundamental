@@ -22,17 +22,55 @@ const option1Message =
 2. BATU
 3. KERTAS`;
 
-do {
+function outComeCheck(option1,cpuChoice) {
 
-const option1 = Math.abs(prompt(option1Message) - 1);
+const tieCondition = rockPaperScissorOptions[option1][0] == rockPaperScissorOptions[cpuChoice][0];
+const winCondition = rockPaperScissorOptions[option1][2] == rockPaperScissorOptions[cpuChoice][0];
+const lostCondition = rockPaperScissorOptions[option1][1] == rockPaperScissorOptions[cpuChoice][0];
 
-const cpuChoice =  Math.abs((Math.floor(Math.random() * 3)));
-// alert(option1);
-// alert(cpuChoice);
 
-alert(`Player : ${option1} / ${rockPaperScissorOptions[option1][0]}`);
-// alert(`${rockPaperScissorOptions[option1][1]} - Your doom`);
-alert(`CPU : ${cpuChoice} / ${rockPaperScissorOptions[cpuChoice][0]}`);
+    if (tieCondition) {
+
+        alert(
+`Player : ${rockPaperScissorOptions[option1][0]} 
+vs
+CPU : ${rockPaperScissorOptions[cpuChoice][0]}
+
+TIE`);
+        stats[2] += 1;
+
+        
+
+
+    } else if (winCondition) {
+
+        
+        alert(
+`Player : ${rockPaperScissorOptions[option1][0]} 
+vs 
+CPU : ${rockPaperScissorOptions[cpuChoice][0]}
+
+Player WIN`);
+
+        stats[0] += 1;
+
+
+
+    } else if (lostCondition) {
+
+
+        alert(
+`Player : ${rockPaperScissorOptions[option1][0]} 
+vs
+CPU : ${rockPaperScissorOptions[cpuChoice][0]}
+
+Player LOSE`);
+
+        stats[1] += 1;
+
+
+
+    }
 
 
 // // The looping to check the game result
@@ -124,48 +162,6 @@ alert(`CPU : ${cpuChoice} / ${rockPaperScissorOptions[cpuChoice][0]}`);
 
 // }
 
-if (rockPaperScissorOptions[option1][0] == rockPaperScissorOptions[cpuChoice][0]) {
-
-    alert(
-`Player : ${rockPaperScissorOptions[option1][0]} 
-vs
-CPU : ${rockPaperScissorOptions[cpuChoice][0]}
-
-TIE`);
-    stats[2] += 1;
-
-    
-
-
-} else if (rockPaperScissorOptions[option1][2] == rockPaperScissorOptions[cpuChoice][0] ) {
-
-    
-    alert(
-`Player : ${rockPaperScissorOptions[option1][0]} 
-vs 
-CPU : ${rockPaperScissorOptions[cpuChoice][0]}
-
-Player WIN`);
-
-    stats[0] += 1;
-
-
-
-} else if (rockPaperScissorOptions[option1][1] == rockPaperScissorOptions[cpuChoice][0]) {
-
-
-    alert(
-`Player : ${rockPaperScissorOptions[option1][0]} 
-vs
-CPU : ${rockPaperScissorOptions[cpuChoice][0]}
-
-Player LOSE`);
-
-    stats[1] += 1;
-
-
-
-}
 
 
 // // // The looping to check the game result
@@ -216,12 +212,31 @@ Player LOSE`);
 
 // }
 
+
+}
+
+do {
+
+const option1 = Math.abs(prompt(option1Message) - 1);
+
+const cpuChoice =  Math.abs((Math.floor(Math.random() * 3)));
+// alert(option1);
+// alert(cpuChoice);
+
+alert(`Player : ${option1} / ${rockPaperScissorOptions[option1][0]}`);
+// alert(`${rockPaperScissorOptions[option1][1]} - Your doom`);
+alert(`CPU : ${cpuChoice} / ${rockPaperScissorOptions[cpuChoice][0]}`);
+
+
+outComeCheck (option1,cpuChoice);
+
+
 alert(`
 WIN : ${stats[0]}
 LOSE : ${stats[1]}
 TIE : ${stats[2]}`)
 
-isPlay = confirm(`Try again`);
+isPlay = confirm(`Try again?`);
 
 } while (isPlay);
 

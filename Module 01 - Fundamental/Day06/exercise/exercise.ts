@@ -129,6 +129,60 @@ console.log(findDifferenceTwoArray(arr10,arr11));
 
 
 
+// Alternative way :
+
+
+function findDifferenceTwoArray1(array1 :any [], array2 :any []) {
+
+
+const filteredResult1 = array1.filter((element,index,array) => {
+
+
+    return !array2.includes(element);
+
+
+
+    // for (let i = 0; i < array2.length; i++) {
+        
+        
+    //     if (array[index] == array2[i]) {
+            
+            
+    //         break;
+
+
+    //     } else if (i == array2.length - 1) {
+
+            
+
+    //         console.log(element);
+    //         console.log(index);
+    //         console.log(i);
+            
+            
+            
+
+    //        return element;
+
+    //     }
+
+    // }
+        
+    
+
+
+});
+
+
+const filteredResult2 = array2.filter(element => {return !array1.includes(element)});
+
+return [...filteredResult1,...filteredResult2]
+
+
+}
+
+
+console.log(findDifferenceTwoArray1(arr10,arr11));
 
 
 

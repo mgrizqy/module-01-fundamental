@@ -184,15 +184,15 @@ Exercise 2
 
 ● Create a program to create transaction
 ● Product Class
-○ Properties
-■ Name
-■ Price
+	○ Properties
+		■ Name
+		■ Price
 ● Transaction Class
-○ Properties
-■ Total
-■ Product
-● All product data
-● Qty
+	○ Properties
+		■ Total
+		■ Product
+			● All product data
+			● Qty
 
 ○ Add to cart method → Add product to transaction
 ○ Show total method → Show total current transaction
@@ -203,9 +203,157 @@ Exercise 2
 */
 
 
-
 class Product {
 
 
-    
+    name: string;
+    price: number;
+    quantity: number;
+
+
+    constructor(name :string, price :number, quantity :number){
+
+
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+
+
 }
+
+
+const test : Product [] = [new Product("Kipas angin Portable", 200000, 1), new Product("Sikat gigi", 70000, 2)];
+
+
+
+class Transaction {
+
+
+    total :number = 0;
+    product : Product [];
+
+
+    constructor(product :Product []) {
+
+
+        product.forEach ((value,index,array) =>  {
+            
+            if (array[index].quantity > 1) {
+
+
+                this.total += value.price * array[index].quantity;
+
+
+            } else {
+
+
+                this.total += value.price
+
+
+            }
+            
+        
+        });
+
+
+        this.product = product;
+
+
+
+    }
+
+
+    addToCart(product :Product ) {
+
+
+        console.log(this.product.findIndex((element,index,obj) => { return obj[index].name == product.name }));
+        
+        const productIndex  :number = this.product.findIndex((element,index,obj) => { return obj[index].name == product.name });
+
+
+        this.total += (product.price * product.quantity);
+
+
+        if (productIndex != -1) {
+
+
+
+
+
+            this.product[productIndex].quantity += product.quantity;
+                
+                
+        }   else {
+
+
+            this.product.push(product);
+
+
+        }
+
+
+
+    }
+    
+    showTotal() {
+
+
+        const totalPrice : string = this.total.toLocaleString("id", { style: "currency", currency: "IDR"});
+        let printProducts = `Products : `;
+        this.product.forEach((value,index,array) => { 
+
+
+            if (array[index].quantity > 1) {
+
+
+                printProducts += `${array[index].quantity} `;
+
+
+            }
+
+
+            printProducts += `${value.name}`;
+
+
+            if ( index != array.length - 1 ) {
+
+
+                printProducts += `, `;
+
+
+            }          
+         });
+
+
+
+         return `Total price : ${totalPrice}; ${printProducts}`
+
+
+    }
+    
+    checkOut() {
+
+
+        //let checkOutMessage : string = `Payment successful. ${this.showTotal()}`;
+        const totalPrice : string = this.total.toLocaleString("id", { style: "currency", currency: "IDR"});
+        return {total: totalPrice, products: this.product}
+    }
+
+
+
+}
+
+
+const test2 : Transaction = new Transaction(test);
+
+
+console.log(test2.showTotal());
+test2.addToCart(new Product("Playstation 6",12000000,3));
+test2.addToCart(new Product("Playstation 6",12000000,1));
+test2.addToCart(new Product("Playstation 6",12000000,8));
+console.log(test2.showTotal());
+
+
+console.log(test2.checkOut());

@@ -155,24 +155,57 @@ const tempInput : IDtemp = {name: `David`, age: 20};
 
 console.log(tempInput);
 
-for (const key in tempInput) {
 
-    console.log(tempInput[key]);
+console.log(Object.keys(tempInput));
+
+
+const propertiesFlipped : any [] = [];
+
+
+
+for (const property in tempInput) {
+
+
+    
+    console.log(tempInput[property]);
+
+
+    if (propertiesFlipped.length < Object.keys(tempInput).length) {
+
+        propertiesFlipped.push([]);
+
+    }
+
+    
+    propertiesFlipped.push([]);
+    propertiesFlipped[1].push(property);
+    propertiesFlipped[0].push(tempInput[property]);
+    console.log(property);
+    
     
 
 }
 
+console.log(propertiesFlipped);
 
 
 
-const entries = Object.entries(tempInput);
-console.log(entries);
 
-const switchEntries = entries.map(([key, value]) => [value,key]);
-console.log(switchEntries);
 
-const switchObject = Object.fromEntries(switchEntries);
-console.log(switchObject);
+
+
+// const entries = Object.entries(tempInput);
+// console.log(entries);
+
+// const switchEntries = entries.map(([key, value]) => [value,key]);
+// console.log(switchEntries);
+
+// const switchObject = Object.fromEntries(switchEntries);
+// console.log(switchObject);
+
+
+
+
 
 
 
@@ -191,7 +224,7 @@ Exercise
 
 function factorial(number :number) {
 
-    if (number === 0 || 0 === number) {
+    if (number === 0 || 1 === number) {
 
         return 1;
 

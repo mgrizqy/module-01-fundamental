@@ -62,7 +62,7 @@ class Transaction1 {
     private cart: ICartItem [] = []
 
     // tambah produk ke keranjang
-    public addToCart(product: Product, quantity: number) {
+    public addToCart(product: Product1, quantity: number) {
 
         
 
@@ -70,5 +70,3 @@ class Transaction1 {
 
 }
 
-
-const 

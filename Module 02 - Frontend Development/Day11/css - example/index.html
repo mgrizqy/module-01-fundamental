@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Example</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* === Tempat Internal CSS === */
+        .section{
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .internal-section h2 {
+            color: darkred;
+            text-align: center;
+        }
+
+        .internal-section p {
+            color: #444;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .internal-section button {
+            background-color: navy;
+            color: wheat;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer; /* kalau ngehover button bisa ada jempolnya di btn tsb. Ada progress,ada pointer dkk*/
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Inline Style CSS -->
+     <div class="section">
+        <h2 style="color:darkblue; text-align: center;">Contoh Inline Style</h2>
+        <p style="font-size: 16px; color: gray;">Ini adalah paragraf dengan <strong style="color: red;">inline css</strong> Lorem ipsum dolor sit amet.</p>
+        <button style="background-color: green; color: white; padding: 10px; border-radius: 8px;">Tombol Inline</button>
+     </div>
+
+     <!-- Internal CSS ada khusus style di Head HTML -->
+     <div class="section internal-section">
+        <h2>Contoh internal CSS</h2>
+        <p>Paragraf ini pakai gaya yang terdifinisi di tag</p>
+        <button>Tombol Internal</button>
+     </div>
+
+     <!-- External CSS -->
+      <div class="section external-section">
+        <h2>Contoh External CSS</h2>
+        <p>Biasanya CSS ini berasal dari file seperti style.css</p>
+        <button>Tombol external</button>
+
+        <button class="btn-1">Tombol Eksternal 1 </button>
+        <button class="btn-2"> Tombol Eksternal 2 </button>
+
+      </div>
+
+
+</body>
+</html>

@@ -17,99 +17,7 @@ class Employee {
     name:string
     perHour_Salary : number
     overTime_Salary : number
-
-
-    constructor(name: string) {
-
-        this.name = name;
-
-    }
-
-}
-
-
-// membuat objek atau class employee full time dari class employee
-class Fulltime extends Employee {
-    
     workingDays : WorkingHours [] = [];
-    perHour_Salary : number = 100000;
-    overTime_Salary : number = 75000;
-
-    constructor(name:string) {
-
-        super(name);
-
-    }
-
-
-    addWorkingHours (clockIn : string, clockOut : string) {
-
-        let HoursMinutes_clockIn : string [] = clockIn.split(":");
-        let HoursMinutes_clockOut : string [] = clockOut.split(":");
-
-        const Hours : number = Math.abs(parseInt(HoursMinutes_clockIn[0]) - parseInt(HoursMinutes_clockOut[0]));
-        
-        let salary : number = 0;
-        const overtime = Hours - 6;
-
-        if (Hours > 6) {
-
-            salary = (this.perHour_Salary * (Hours - overtime)) + (this.overTime_Salary * overtime);
-
-        } else {
-
-            salary = this.perHour_Salary * Hours;
-
-        }
-
-
-        const newWorkingHours : WorkingHours = { name : this.name, clockIn, clockOut, dailyhour : Hours , dailySalary : salary}
-
-        this.workingDays.push(newWorkingHours);
-
-
-        
-        
-
-    }
-
-    getTotalSalary() {
-
-        let totalSalary = 0;
-
-        if (this.workingDays.length != 0) {
-
-            for (const property in this.workingDays) {
-
-                totalSalary += this.workingDays[property].dailySalary;
-                
-
-            }
-
-        }
-
-        return totalSalary.toLocaleString("id", { style : "currency", currency : "IDR"})
-
-    }
-
-
-
-}
-
-// membuat objek atau class employee part time dari class employee
-class PartTime extends Employee {
-
-    workingDays : WorkingHours [] = [];
-    perHour_Salary : number = 50000;
-    overTime_Salary : number = 30000;
-
-    constructor(name:string) {
-
-        super(name);
-
-    }
-
-
     addWorkingHours (clockIn : string, clockOut : string) {
 
         let HoursMinutes_clockIn : string [] = clockIn.split(":");
@@ -160,6 +68,50 @@ class PartTime extends Employee {
         return totalSalary.toLocaleString("id", { style : "currency", currency : "IDR"})
 
     }
+
+
+    constructor(name: string) {
+
+        this.name = name;
+
+    }
+
+}
+
+
+// membuat objek atau class employee full time dari class employee
+class Fulltime extends Employee {
+    
+    
+    perHour_Salary : number = 100000;
+    overTime_Salary : number = 75000;
+
+    constructor(name:string) {
+
+        super(name);
+
+    }
+
+
+
+}
+
+// membuat objek atau class employee part time dari class employee
+class PartTime extends Employee {
+
+    perHour_Salary : number = 50000;
+    overTime_Salary : number = 30000;
+
+    constructor(name:string) {
+
+        super(name);
+
+    }
+
+
+
+
+
 
 
 

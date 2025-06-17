@@ -124,7 +124,7 @@ o Example: 15 → 610
 
 */
 
-const fibonacciNumber :number = 15;
+const fibonacciNumber :number = 4;
 let counter1 :number = 0;
 let numberB :number = 0;
 let numberC :number = 1;

@@ -1,0 +1,238 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+--cream : #F2EAE2;
+--auroMetalSaurus : #6C7289;
+--deepAquaMarine : #3D8168;
+--deepAquaMarine_Hover : #1A4032;
+
+
+}
+
+body {
+
+background-color: var(--cream);
+margin: 0;
+
+}
+
+.mainDisplay {
+
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+
+
+
+}
+
+.productDisplay {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+
+
+    width: 600px;
+    height: 450px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+
+
+}
+
+.pic {
+
+    overflow:hidden;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.details {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    
+
+
+
+}
+
+.detailsInner {
+
+    width: 236px;
+
+
+}
+
+.subTitle {
+
+    font-family: Montserrat, sans-serif;
+    color: var(--auroMetalSaurus);
+    font-size: 12px;
+    letter-spacing: 5px;
+    font-weight: 500;
+  
+
+}
+
+.title {
+
+
+font-family: Fraunces, sans-serif;
+line-height: 1;
+
+
+}
+
+.description {
+
+    font-family: Montserrat, sans-serif;
+    color: var(--auroMetalSaurus);
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: 500;
+    
+}
+
+.priceCentering {
+
+display: flex; 
+align-items: center;
+
+
+}
+
+.price {
+    
+    font-family: Fraunces, sans-serif;
+    color: var(--deepAquaMarine);
+    margin-right: 19px;
+
+    
+}
+
+.price2 {
+    
+    font-family: Montserrat, sans-serif;
+    color: var(--auroMetalSaurus);
+    font-size: 13px;
+    text-decoration: line-through;
+    
+    
+}
+
+.addToCart {
+    width: 236px;
+    height: 48px;
+    background-color: var(--deepAquaMarine);
+    border-radius: 8px;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:11px
+    
+}
+.addToCart:hover {
+
+    background-color: var(--deepAquaMarine_Hover);
+
+}
+
+.addToCart_text {
+    
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+
+} 
+
+
+
+       /* Small screen */
+        @media screen and (max-width: 650px) {
+            
+            .productDisplay-mobile {
+                    background-color: #3D8168;
+                    flex-direction: column;
+                    width: 343px;
+                    height: 611px;
+                    box-sizing: border-box;
+
+            }
+
+            .price {
+                
+                margin-top: 0px;
+            }
+
+            .price2 {
+
+                margin-top: 0px;
+
+
+            }
+
+            .addToCart {
+
+
+            width: 100%;
+            }
+
+            .detailsInner{
+
+                width: auto;
+
+            }
+
+            .subTitle {
+
+                  margin-top: 0;
+            }
+
+            .title {
+
+                  margin-top: 0;
+
+            }
+
+            .perfumeImg {
+
+                height: 100%; 
+                width: 100%; 
+                object-fit: cover;
+                object-position: 50% 35%;
+
+            }
+
+            .details {
+
+                padding: 24px;
+
+            }
+            
+        }

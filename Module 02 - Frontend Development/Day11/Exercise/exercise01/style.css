@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design</title>
-    <style>
 
-        body{
+
+body{
 
     background-color: #F4D04E;
 
@@ -84,7 +78,7 @@
 
         .learning {
 
-           position:relative; 
+
            font-size: 10px; 
             line-height: 20px;
             
@@ -105,7 +99,6 @@
             font-size: 11px;
             line-height: 18px;
             color: #6B6B6B;
-            padding-bottom: px;
             background-color: none;
             
 
@@ -129,50 +122,3 @@
             line-height: 25px
 
         }
-
-
-
-
-    </style>
-</head>
-<body>
-    
-    <div class="box1">
-
-        <div class="box2">
-            
-            <img src="./image.png" alt="Design" class="img1" >
-            
-                        <div class="box3">
-            
-                            <p class= "fontFig learning" > <strong>Learning</strong></p>
-            
-                        </div>
-            <p class="textPublish">Published 21 Dec 2023</p>
-
-            <h3 class="fontFig" style="padding: 0px;">HTML & CSS foundations</h2>
-
-            <p class="fontFig textDescription">These languages are the backbones of every website, defining structure, content, and presentation.</p>
-
-            <div style=" height: 25px;">
-                
-                
-                <div class="teacherImg">
-
-                    
-
-                </div>
-
-                <p class="fontFig teacherName" ><b>Greg Hooper</b></p>
-
-                </div>
-
-        </div>
-
-    </div>
-
-</body>
-</html>
-
-
-

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS: Flex</title>
+    <style>
+
+        #navbar {
+
+            display: flex;
+            border: 1px solid red;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 10px
+        }
+
+        #nav-menu {
+
+            display: flex;
+            list-style: none;
+            gap: 20px;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav id="navbar">
+    <img src="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/09/online-marketing.jpg" 
+    alt="" 
+    id="nav-logo"
+    style="width: 90px;"/>
+
+    <ul id="nav-menu">
+
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+
+    </ul>
+
+    <div id="nav-action">
+        <button>Sign In</button>
+        <button>Sign Out</button>
+
+    </div>
+</nav>
+</body>
+</html>

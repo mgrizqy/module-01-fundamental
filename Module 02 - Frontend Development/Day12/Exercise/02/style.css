@@ -1,0 +1,248 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+:root{
+--cream : #F2EAE2;
+--purple : #733FC8;
+--gray : #48556A;
+--grayTransparency : #48556A3F;
+--blueishBlack : #19202D;
+--lightPurple : #A775F1;
+--lightBlue : #ECF2F8;
+
+}
+
+body {
+
+background-color: var(--lightBlue);
+margin: 0;
+box-sizing: border-box;
+
+}
+
+.mainCanvas {
+
+
+width: 100vw;
+height: 100vh;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+
+}
+
+.canvas {
+
+
+width: 1110px;
+height: 572px;
+
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: 1fr 1fr;
+column-gap: 30px;
+row-gap: 24px;
+grid-template-areas: 
+"area1 area1 area2 area5"
+"area3 area4 area4 area5";
+
+
+
+}
+
+.title {
+
+
+font-family: Barlow Semi Condensed;
+font-weight: 600;
+font-size: 20px;
+color: var(--gray);
+margin-top: 0px;
+margin-bottom: 24px;
+
+}
+
+.titleforDark {
+
+
+font-family: Barlow Semi Condensed;
+font-weight: 600;
+font-size: 20px;
+color: white;
+margin-top: 0px;
+margin-bottom: 24px;
+
+}
+.profile {
+    display: flex;
+    margin-bottom: 18px;
+    align-items: center;
+
+
+}
+
+.profilePic {
+
+width: 28px;
+height: 28px;
+margin-right: 18px;
+
+}
+
+
+.nameForDark {
+
+    font-family: Barlow Semi Condensed;
+    font-weight: 500;
+    font-size: 13px;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 4px;
+    
+    
+}
+
+.name {
+
+    font-family: Barlow Semi Condensed;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 0;
+    margin-bottom: 4px;
+    
+    
+}
+.status {
+    
+    font-family: Barlow Semi Condensed;
+    font-weight: 500;
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 50%;
+
+
+
+}
+.statusForDark {
+    
+    font-family: Barlow Semi Condensed;
+    font-weight: 500;
+    font-size: 11px;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 50%;
+
+
+
+}
+
+
+.testimonyForDark {
+    
+    
+    font-family: Barlow Semi Condensed;
+    font-weight: 500;
+    font-size: 13px;
+    color: white;
+    opacity: 70%;
+
+
+}
+.testimony {
+    
+    
+    font-family: Barlow Semi Condensed;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--gray);
+    opacity: 70%;
+
+
+}
+
+.box {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 26px 32px;
+
+    border-radius: 8px;
+    box-shadow: 40px 40px 50px -47px var(--grayTransparency);
+
+}
+
+.quote {
+
+position: absolute;
+
+
+z-index: -1;
+
+
+}
+
+#box1 {
+
+background-color: var(--purple);
+grid-area: area1;
+z-index: -2;
+background-image: url(./assets/quote.png);
+background-repeat: no-repeat;
+background-size: 110px;
+background-position: 82% 0%;
+
+    
+}
+#box2 {
+
+background-color: var(--gray);
+grid-area: area2;
+
+}
+#box3 {
+    
+
+    background-color: white;
+    grid-area: area3;
+
+    
+}
+
+#box4 {
+
+background-color: var(--blueishBlack);
+grid-area: area4;
+    
+}
+#box5 {
+
+background-color: white;
+grid-area: area5;   
+    
+}
+
+
+
+       /* Small screen */
+        @media screen and (max-width: 800px) {
+
+            .canvas {
+                width: 327px;
+                display: flex;
+                flex-direction: column;
+                
+                
+            }
+
+
+        }
